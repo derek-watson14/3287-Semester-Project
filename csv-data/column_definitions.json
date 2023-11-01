@@ -1,0 +1,52 @@
+{
+    "GeneralInfo": {
+        "DataFormat": "csv",
+        "NoteOnOdds": "Some abbreviations are no longer in use (specifically from old bookmakers). Refer to the provided URL for current bookmakers.",
+        "DataSourcesURL": "http://www.football-data.co.uk/matches.php"
+    },
+    "Columns": {
+        "Div": "League Division",
+        "Date": "Match Date (dd/mm/yy)",
+        "Time": "Time of match kick off",
+        "HomeTeam": "Home Team",
+        "AwayTeam": "Away Team",
+        "FTHG": "Full Time Home Team Goals",
+        "FTAG": "Full Time Away Team Goals",
+        "FTR": "Full Time Result (H=Home Win, D=Draw, A=Away Win)",
+        "HTHG": "Half Time Home Team Goals",
+        "HTAG": "Half Time Away Team Goals",
+        "HTR": "Half Time Result (H=Home Win, D=Draw, A=Away Win)",
+        "Referee": "Match Referee",
+        "HS": "Home Team Shots",
+        "AS": "Away Team Shots",
+        "HST": "Home Team Shots on Target",
+        "AST": "Away Team Shots on Target",
+        "HC": "Home Team Corners",
+        "AC": "Away Team Corners",
+        "HF": "Home Team Fouls Committed",
+        "AF": "Away Team Fouls Committed",
+        "HY": "Home Team Yellow Cards",
+        "AY": "Away Team Yellow Cards",
+        "HR": "Home Team Red Cards",
+        "AR": "Away Team Red Cards",
+        "B365H": "Bet365 home win odds",
+        "B365D": "Bet365 draw odds",
+        "B365A": "Bet365 away win odds",
+        "IWH": "Interwetten home win odds",
+        "IWD": "Interwetten draw odds",
+        "IWA": "Interwetten away win odds",
+        "WHH": "William Hill home win odds",
+        "WHD": "William Hill draw odds",
+        "WHA": "William Hill away win odds"
+    },
+    "ClosingOdds": {
+        "Note": "As above but with an additional 'C' character following the bookmaker abbreviation/Max/Avg"
+    },
+    "Acknowledgements": {
+        "CurrentResults": "XScores - http://www.xscores .com",
+        "MatchStatistics": "BBC, ESPN Soccer, Bundesliga.de, Gazzetta.it and Football.fr",
+        "BookmakersBettingOdds": "Individual bookmakers",
+        "BettingOddsCollection": "Betting odds for weekend games are collected Friday afternoons, and on Tuesday afternoons for midweek games.",
+        "AdditionalStats2000_2002": "Additional match statistics (corners, shots, bookings, referee etc.) for the 2000/01 and 2001/02 seasons for the English, Scottish and German leagues were provided by Sports.com (now under new ownership and no longer available)."
+    }
+}
