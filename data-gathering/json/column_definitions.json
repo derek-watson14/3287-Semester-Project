@@ -1,0 +1,151 @@
+{
+    "GeneralInfo": {
+        "DataFormat": "csv",
+        "NoteOnOdds": "Some abbreviations are no longer in use (specifically from old bookmakers). Refer to the provided URL for current bookmakers.",
+        "DataSourcesURL": "http://www.football-data.co.uk/matches.php"
+    },
+    "Columns": {
+        "Div": {
+            "description": "League Division",
+            "type": "string"
+        },
+        "Date": {
+            "description": "Match Date (dd/mm/yy)",
+            "type": "string"
+        },
+        "Time": {
+            "description": "Time of match kick off",
+            "type": "string"
+        },
+        "HomeTeam": {
+            "description": "Home Team",
+            "type": "string"
+        },
+        "AwayTeam": {
+            "description": "Away Team",
+            "type": "string"
+        },
+        "FTHG": {
+            "description": "Full Time Home Team Goals",
+            "type": "integer"
+        },
+        "FTAG": {
+            "description": "Full Time Away Team Goals",
+            "type": "integer"
+        },
+        "FTR": {
+            "description": "Full Time Result (H=Home Win, D=Draw, A=Away Win)",
+            "type": "string"
+        },
+        "HTHG": {
+            "description": "Half Time Home Team Goals",
+            "type": "integer"
+        },
+        "HTAG": {
+            "description": "Half Time Away Team Goals",
+            "type": "integer"
+        },
+        "HTR": {
+            "description": "Half Time Result (H=Home Win, D=Draw, A=Away Win)",
+            "type": "string"
+        },
+        "Referee": {
+            "description": "Match Referee",
+            "type": "string"
+        },
+        "HS": {
+            "description": "Home Team Shots",
+            "type": "integer"
+        },
+        "AS": {
+            "description": "Away Team Shots",
+            "type": "integer"
+        },
+        "HST": {
+            "description": "Home Team Shots on Target",
+            "type": "integer"
+        },
+        "AST": {
+            "description": "Away Team Shots on Target",
+            "type": "integer"
+        },
+        "HC": {
+            "description": "Home Team Corners",
+            "type": "integer"
+        },
+        "AC": {
+            "description": "Away Team Corners",
+            "type": "integer"
+        },
+        "HF": {
+            "description": "Home Team Fouls Committed",
+            "type": "integer"
+        },
+        "AF": {
+            "description": "Away Team Fouls Committed",
+            "type": "integer"
+        },
+        "HY": {
+            "description": "Home Team Yellow Cards",
+            "type": "integer"
+        },
+        "AY": {
+            "description": "Away Team Yellow Cards",
+            "type": "integer"
+        },
+        "HR": {
+            "description": "Home Team Red Cards",
+            "type": "integer"
+        },
+        "AR": {
+            "description": "Away Team Red Cards",
+            "type": "integer"
+        },
+        "B365H": {
+            "description": "Bet365 home win odds",
+            "type": "float"
+        },
+        "B365D": {
+            "description": "Bet365 draw odds",
+            "type": "float"
+        },
+        "B365A": {
+            "description": "Bet365 away win odds",
+            "type": "float"
+        },
+        "IWH": {
+            "description": "Interwetten home win odds",
+            "type": "float"
+        },
+        "IWD": {
+            "description": "Interwetten draw odds",
+            "type": "float"
+        },
+        "IWA": {
+            "description": "Interwetten away win odds",
+            "type": "float"
+        },
+        "WHH": {
+            "description": "William Hill home win odds",
+            "type": "float"
+        },
+        "WHD": {
+            "description": "William Hill draw odds",
+            "type": "float"
+        },
+        "WHA": {
+            "description": "William Hill away win odds",
+            "type": "float"
+        }
+    },
+    "ClosingOdds": {
+        "Note": "As above but with an additional 'C' character following the bookmaker abbreviation/Max/Avg"
+    },
+    "Acknowledgements": {
+        "CurrentResults": "XScores - http://www.xscores .com",
+        "MatchStatistics": "BBC, ESPN Soccer, Bundesliga.de, Gazzetta.it and Football.fr",
+        "BookmakersBettingOdds": "Individual bookmakers",
+        "BettingOddsCollection": "Betting odds for weekend games are collected Friday afternoons, and on Tuesday afternoons for midweek games.",
+        "AdditionalStats2000_2002": "Additional match statistics (corners, shots, bookings, referee etc.) for the 2000/01 and 2001/02 seasons for the English, Scottish and German leagues were provided by Sports.com (now under new ownership and no longer available)."
+    }
+}
