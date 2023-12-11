@@ -23,14 +23,6 @@ odds_records = {
     }
 }
 
-team_match_stats_records = {
-    "TeamMatchStats": {
-        "description": "Statistics for a team in a match",
-        "instance_count": len(df) * 2,
-        "instances": [],
-    }
-}
-
 country_dict = {item["name"]: item["id"] for item in strong_entities["Country"]["instances"]}
 league_dict = {item["name"]: item["id"] for item in strong_entities["League"]["instances"]}
 season_dict = {item["name"]: item["id"] for item in strong_entities["Season"]["instances"]}
@@ -54,6 +46,22 @@ for idx, row in df.iterrows():
             "time": row["Time"],
             "ft_result": row["FTR"],
             "ht_result": row["HTR"],
+            "h_ft_goals": row["FTHG"],
+            "a_ft_goals": row["FTAG"],
+            "h_ht_goals": row["HTHG"],
+            "a_ht_goals": row["HTAG"],
+            "h_shots": row["HS"],
+            "a_shots": row["AS"],
+            "h_shots_on_target": row["HST"],
+            "a_shots_on_target": row["AST"],
+            "h_corners": row["HC"],
+            "a_corners": row["AC"],
+            "h_fouls": row["HF"],
+            "a_fouls": row["AF"],
+            "h_yellow_cards": row["HY"],
+            "a_yellow_cards": row["AY"],
+            "h_red_cards": row["HR"],
+            "a_red_cards": row["AY"],
         }
     )
 
@@ -93,39 +101,7 @@ for idx, row in df.iterrows():
         )
         odds_records["Odds"]["instance_count"] += 1
 
-    team_match_stats_records["TeamMatchStats"]["instances"].append(
-        {
-            "match_id": row["id"],
-            "team_id": team_dict[row["HomeTeam"]],
-            "is_home": True,
-            "ft_goals": row["FTHG"],
-            "ht_goals": row["HTHG"],
-            "shots": row["HS"],
-            "shots_on_target": row["HST"],
-            "corners": row["HC"],
-            "fouls": row["HF"],
-            "yellow_cards": row["HY"],
-            "red_cards": row["HR"],
-        }
-    )
-
-    team_match_stats_records["TeamMatchStats"]["instances"].append(
-        {
-            "match_id": row["id"],
-            "team_id": team_dict[row["AwayTeam"]],
-            "is_home": False,
-            "ft_goals": row["FTAG"],
-            "ht_goals": row["HTAG"],
-            "shots": row["AS"],
-            "shots_on_target": row["AST"],
-            "corners": row["AC"],
-            "fouls": row["AF"],
-            "yellow_cards": row["AY"],
-            "red_cards": row["AR"],
-        }
-    )
-
-combined_records = {**match_records, **odds_records, **team_match_stats_records}
+combined_records = {**match_records, **odds_records}
 
 with open("../json/weak_entities.json", "w") as f:
     json.dump(combined_records, f, indent=4)
