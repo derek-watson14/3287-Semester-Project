@@ -22,18 +22,27 @@ export class ApplicationStack extends cdk.Stack {
       runtime: lambda.Runtime.PYTHON_3_11,
       code: lambda.Code.fromAsset('./router'),
       handler: 'index.handler',
+      functionName: 'soccer-db-router',
       environment: {
         DB_BUCKET_NAME: bucketDeployment.deployedBucket.bucketName,
       },
     });
     bucketDeployment.deployedBucket.grantRead(router);
 
-    const api = new apigateway.RestApi(this, 'dbApi', {
-      restApiName: 'Database Service',
-      description: 'This service serves database queries.',
+    const api = new apigateway.LambdaRestApi(this, 'dbApi', {
+      description: 'This service serves sqlite database queries.',
+      handler: router,
+      proxy: true,
       apiKeySourceType: apigateway.ApiKeySourceType.HEADER,
       deployOptions: {
         stageName: 'prod',
+      },
+      defaultCorsPreflightOptions: {
+        allowOrigins: apigateway.Cors.ALL_ORIGINS,
+        allowMethods: apigateway.Cors.ALL_METHODS,
+      },
+      defaultMethodOptions: {
+        apiKeyRequired: true,
       },
     });
 
@@ -49,17 +58,6 @@ export class ApplicationStack extends cdk.Stack {
     plan.addApiKey(apiKey);
     plan.addApiStage({
       stage: api.deploymentStage,
-    });
-
-    const proxyResource = api.root.addProxy({
-      defaultIntegration: new apigateway.LambdaIntegration(router),
-      defaultMethodOptions: {
-        apiKeyRequired: true,
-      },
-      defaultCorsPreflightOptions: {
-        allowOrigins: apigateway.Cors.ALL_ORIGINS,
-        allowMethods: apigateway.Cors.ALL_METHODS,
-      },
     });
   }
 }
