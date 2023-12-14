@@ -134,6 +134,7 @@ match_indicies = [
     "CREATE INDEX idx_match_season_id ON Match (season_id);",
     "CREATE INDEX idx_match_home_team_id ON Match (home_team_id);",
     "CREATE INDEX idx_match_away_team_id ON Match (away_team_id);",
+    "CREATE INDEX idx_match_ft_result ON Match (ft_result);",
 ]
 
 

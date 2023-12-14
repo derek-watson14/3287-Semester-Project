@@ -22,6 +22,8 @@ export class ApplicationStack extends cdk.Stack {
       runtime: lambda.Runtime.PYTHON_3_11,
       code: lambda.Code.fromAsset('./router'),
       handler: 'index.handler',
+      memorySize: 256,
+      timeout: cdk.Duration.seconds(3),
       functionName: 'soccer-db-router',
       environment: {
         DB_BUCKET_NAME: bucketDeployment.deployedBucket.bucketName,
