@@ -26,6 +26,7 @@ export class ApplicationStack extends cdk.Stack {
       environment: {
         DB_BUCKET_NAME: bucketDeployment.deployedBucket.bucketName,
       },
+      reservedConcurrentExecutions: 2,
     });
     bucketDeployment.deployedBucket.grantRead(router);
 
@@ -47,9 +48,12 @@ export class ApplicationStack extends cdk.Stack {
     });
 
     // Protect API with API Key 
-    const apiKey = api.addApiKey('ApiKey');
+    const apiKey = api.addApiKey('ApiKey', {
+      apiKeyName: 'GeneralUsageKey',
+    });
+
     const plan = api.addUsagePlan('UsagePlan', {
-      name: 'Easy',
+      name: 'General',
       throttle: {
         rateLimit: 10,
         burstLimit: 2,
